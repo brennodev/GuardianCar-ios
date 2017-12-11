@@ -14,8 +14,8 @@
 		ED00E4711FDB1F1600D44493 /* AlertaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED00E4701FDB1F1600D44493 /* AlertaViewController.swift */; };
 		ED00E4731FDB1FB800D44493 /* DashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED00E4721FDB1FB800D44493 /* DashViewController.swift */; };
 		ED00E4751FDB201A00D44493 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED00E4741FDB201A00D44493 /* MapaViewController.swift */; };
+		ED2311851FDEE7EE008A01D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2311841FDEE7EE008A01D0 /* MapKit.framework */; };
 		ED5D59D81FDB16A200FBE475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5D59D71FDB16A200FBE475 /* AppDelegate.swift */; };
-		ED5D59DA1FDB16A200FBE475 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5D59D91FDB16A200FBE475 /* ViewController.swift */; };
 		ED5D59DD1FDB16A200FBE475 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5D59DB1FDB16A200FBE475 /* Main.storyboard */; };
 		ED5D59E01FDB16A200FBE475 /* Guardian.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED5D59DE1FDB16A200FBE475 /* Guardian.xcdatamodeld */; };
 		ED5D59E21FDB16A200FBE475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5D59E11FDB16A200FBE475 /* Assets.xcassets */; };
@@ -59,9 +59,9 @@
 		ED00E4701FDB1F1600D44493 /* AlertaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertaViewController.swift; sourceTree = "<group>"; };
 		ED00E4721FDB1FB800D44493 /* DashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashViewController.swift; sourceTree = "<group>"; };
 		ED00E4741FDB201A00D44493 /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		ED2311841FDEE7EE008A01D0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ED5D59D41FDB16A200FBE475 /* Guardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guardian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5D59D71FDB16A200FBE475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED5D59D91FDB16A200FBE475 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED5D59DC1FDB16A200FBE475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED5D59DF1FDB16A200FBE475 /* Guardian.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Guardian.xcdatamodel; sourceTree = "<group>"; };
 		ED5D59E11FDB16A200FBE475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2311851FDEE7EE008A01D0 /* MapKit.framework in Frameworks */,
 				8F67837D4444F111DA79A2A3 /* Pods_Guardian.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +113,7 @@
 		2A1DD599413C9BD539B73FCE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED2311841FDEE7EE008A01D0 /* MapKit.framework */,
 				D09881E6C79BB67C76659251 /* Pods_Guardian.framework */,
 				BCDBE0E04B67421B4C721D70 /* Pods_GuardianTests.framework */,
 				32BFFEF06BE7A6F90D038040 /* Pods_GuardianUITests.framework */,
@@ -184,7 +186,6 @@
 				ED5D5A091FDB19FE00FBE475 /* imagens */,
 				ED5D5A081FDB19F100FBE475 /* Model */,
 				ED5D59D71FDB16A200FBE475 /* AppDelegate.swift */,
-				ED5D59D91FDB16A200FBE475 /* ViewController.swift */,
 				ED5D59DB1FDB16A200FBE475 /* Main.storyboard */,
 				ED5D59E11FDB16A200FBE475 /* Assets.xcassets */,
 				ED5D59E31FDB16A200FBE475 /* LaunchScreen.storyboard */,
@@ -321,6 +322,11 @@
 					ED5D59D31FDB16A200FBE475 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					ED5D59EA1FDB16A200FBE475 = {
 						CreatedOnToolsVersion = 9.2;
@@ -538,7 +544,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDEF1EDD1FDB47F300D8EFF8 /* HostVC.swift in Sources */,
-				ED5D59DA1FDB16A200FBE475 /* ViewController.swift in Sources */,
 				ED5F2F1C1FDB529D009444F5 /* CarroViewController.swift in Sources */,
 				ED00E46F1FDB1E4300D44493 /* SinistroViewController.swift in Sources */,
 				ED5D59D81FDB16A200FBE475 /* AppDelegate.swift in Sources */,

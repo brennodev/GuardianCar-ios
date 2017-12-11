@@ -16,6 +16,8 @@ class SinistroViewController: UIViewController, UITableViewDataSource, UITableVi
     
     private var titulo = ["Assistência 24h", "Colisão", "Furto de Veículo", "Roubo de Veículo"]
     
+    private var imgSinistro = [ #imageLiteral(resourceName: "siniassistencia"), #imageLiteral(resourceName: "sinicolisao"), #imageLiteral(resourceName: "sinifurto"), #imageLiteral(resourceName: "siniveiculo")]
+    
     let cellSpacingHeight: CGFloat = 20
     
     override func viewDidLoad() {
@@ -39,7 +41,7 @@ class SinistroViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.cellView.layer.cornerRadius = 9
         cell.lbTitulo?.text = text
         cell.imgInfo.image = #imageLiteral(resourceName: "btnInfo")
-        cell.imgTipo.image = #imageLiteral(resourceName: "siniassistencia")
+        cell.imgTipo.image = imgSinistro[indexPath.row]
         cell.imgForma.image = #imageLiteral(resourceName: "sinitelefone")
         
 
