@@ -4,6 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Maps needs your Location to Function</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Maps needs your Location to Function</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>

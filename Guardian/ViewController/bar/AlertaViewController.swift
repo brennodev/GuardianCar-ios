@@ -10,6 +10,7 @@ import UIKit
 
 class AlertaViewController: UIViewController {
     
+    @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
