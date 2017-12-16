@@ -27,6 +27,7 @@
 		ED5F2F1F1FDB596C009444F5 /* SinistroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F2F1E1FDB596C009444F5 /* SinistroTableViewCell.swift */; };
 		ED5F2F211FDB779B009444F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F2F201FDB779B009444F5 /* LoginViewController.swift */; };
 		ED5F2F231FDB80F2009444F5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = ED5F2F221FDB80F2009444F5 /* logo.png */; };
+		EDE1ED191FE4377000389DC6 /* DriveONConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1ED181FE4377000389DC6 /* DriveONConst.swift */; };
 		EDEF1EDD1FDB47F300D8EFF8 /* HostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEF1EDC1FDB47F300D8EFF8 /* HostVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		ED5F2F1E1FDB596C009444F5 /* SinistroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinistroTableViewCell.swift; sourceTree = "<group>"; };
 		ED5F2F201FDB779B009444F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED5F2F221FDB80F2009444F5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		EDE1ED181FE4377000389DC6 /* DriveONConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveONConst.swift; sourceTree = "<group>"; };
 		EDEF1EDC1FDB47F300D8EFF8 /* HostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostVC.swift; sourceTree = "<group>"; };
 		EFD83A73E27602696F04C881 /* Pods-GuardianUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuardianUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuardianUITests/Pods-GuardianUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +186,7 @@
 		ED5D59D61FDB16A200FBE475 /* Guardian */ = {
 			isa = PBXGroup;
 			children = (
+				EDE1ED171FE4376300389DC6 /* util */,
 				ED00E46D1FDB1E1000D44493 /* ViewController */,
 				ED5D5A091FDB19FE00FBE475 /* imagens */,
 				ED5D5A081FDB19F100FBE475 /* Model */,
@@ -237,6 +240,14 @@
 				ED2311861FDEFC24008A01D0 /* NotificacaoTableViewCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		EDE1ED171FE4376300389DC6 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				EDE1ED181FE4377000389DC6 /* DriveONConst.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 		EDEF1EDB1FDB47E900D8EFF8 /* Menu */ = {
@@ -480,11 +491,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Guardian/Pods-Guardian-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/InteractiveSideMenu/InteractiveSideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InteractiveSideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -557,6 +572,7 @@
 				ED00E4731FDB1FB800D44493 /* DashViewController.swift in Sources */,
 				ED00E4711FDB1F1600D44493 /* AlertaViewController.swift in Sources */,
 				ED5F2F211FDB779B009444F5 /* LoginViewController.swift in Sources */,
+				EDE1ED191FE4377000389DC6 /* DriveONConst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

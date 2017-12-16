@@ -70,12 +70,12 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         
         mapView.setRegion(region, animated: false)
-        /*
+        
          let pin = MKPointAnnotation()
          pin.coordinate.latitude = userLocation.coordinate.latitude
          pin.coordinate.longitude = userLocation.coordinate.longitude
-         pin.title = "Your movement line"
-         map.addAnnotation(pin)
-         */
+         pin.title = "JXP 0102"
+         mapView.addAnnotation(pin)
+        
     }
 }
