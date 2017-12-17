@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfSenha: UITextField!
@@ -20,9 +20,20 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tfEmail.delegate = self
+        tfSenha.delegate = self
+        
         btnLogin.setTitleColor(.white, for: .normal)
         btnLogin.backgroundColor = UIColor(red: 0/255, green: 84/255, blue: 114/255, alpha: 1.0)
         btnLogin.layer.cornerRadius = btnLogin.layer.frame.height / 2
+    }
+    
+    private func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func forgotPress(_ sender: Any) {
