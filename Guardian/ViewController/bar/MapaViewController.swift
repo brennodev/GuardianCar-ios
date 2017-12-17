@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapaViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class MapaViewController: BaseViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var vwMap1: UIView!
     @IBOutlet weak var vwMap2: UIView!
@@ -24,6 +24,8 @@ class MapaViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.addSlideMenuButton()
     
         self.manager = CLLocationManager()
         self.manager.delegate = self

@@ -8,10 +8,13 @@
 
 import UIKit
 
-class AlertaViewController: UIViewController {
+class AlertaViewController: BaseViewController {
     
     @IBOutlet weak var tableview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.addSlideMenuButton()
     }
 }

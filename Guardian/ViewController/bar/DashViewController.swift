@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashViewController: UIViewController, UIScrollViewDelegate {
+class DashViewController: BaseViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var vwMap1: UIView!
     @IBOutlet weak var vwMap2: UIView!
@@ -22,6 +22,7 @@ class DashViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.addSlideMenuButton()
         self.vwMap1.backgroundColor = .white
         self.vwMap2.backgroundColor = .white
         self.vwMap3.backgroundColor = .white

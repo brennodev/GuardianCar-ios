@@ -8,9 +8,10 @@
 
 import UIKit
 
-class CarroViewController: UIViewController {
+class CarroViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addSlideMenuButton()
     }
 }

@@ -8,20 +8,22 @@
 
 import UIKit
 
-class SinistroViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SinistroViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var lbDate: UILabel!
     @IBOutlet weak var lbTittulo: UILabel!
     @IBOutlet weak var tableview: UITableView!
     
-    private var titulo = ["Assistência 24h", "Colisão", "Furto de Veículo", "Roubo de Veículo"]
+    private var titulo = ["Assistência 24h", "Colisão", "Furto de Veículo", "Roubo de Veículo", "Incêndio"]
     
-    private var imgSinistro = [ #imageLiteral(resourceName: "siniassistencia"), #imageLiteral(resourceName: "sinicolisao"), #imageLiteral(resourceName: "sinifurto"), #imageLiteral(resourceName: "siniveiculo")]
+    private var imgSinistro = [ #imageLiteral(resourceName: "siniassistencia"), #imageLiteral(resourceName: "sinicolisao"), #imageLiteral(resourceName: "sinifurto"), #imageLiteral(resourceName: "siniveiculo"), #imageLiteral(resourceName: "siniveiculo")]
     
     let cellSpacingHeight: CGFloat = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.addSlideMenuButton()
         
         self.tableview.delegate = self
         self.tableview.dataSource = self

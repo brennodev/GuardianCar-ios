@@ -7,11 +7,12 @@
 //
 
 import UIKit
-import InteractiveSideMenu
 
-class HostVC: MenuContainerViewController {
+class HostVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.addSlideMenuButton()
     }
 }

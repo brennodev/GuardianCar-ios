@@ -16,6 +16,8 @@
 		ED00E4751FDB201A00D44493 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED00E4741FDB201A00D44493 /* MapaViewController.swift */; };
 		ED2311851FDEE7EE008A01D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2311841FDEE7EE008A01D0 /* MapKit.framework */; };
 		ED2311871FDEFC24008A01D0 /* NotificacaoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2311861FDEFC24008A01D0 /* NotificacaoTableViewCell.swift */; };
+		ED2B40D21FE6374D00AC80E3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B40D01FE6374C00AC80E3 /* MenuViewController.swift */; };
+		ED2B40D31FE6374D00AC80E3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B40D11FE6374D00AC80E3 /* BaseViewController.swift */; };
 		ED5D59D81FDB16A200FBE475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5D59D71FDB16A200FBE475 /* AppDelegate.swift */; };
 		ED5D59DD1FDB16A200FBE475 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5D59DB1FDB16A200FBE475 /* Main.storyboard */; };
 		ED5D59E01FDB16A200FBE475 /* Guardian.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED5D59DE1FDB16A200FBE475 /* Guardian.xcdatamodeld */; };
@@ -63,6 +65,8 @@
 		ED00E4741FDB201A00D44493 /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		ED2311841FDEE7EE008A01D0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ED2311861FDEFC24008A01D0 /* NotificacaoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificacaoTableViewCell.swift; sourceTree = "<group>"; };
+		ED2B40D01FE6374C00AC80E3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		ED2B40D11FE6374D00AC80E3 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ED5D59D41FDB16A200FBE475 /* Guardian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guardian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5D59D71FDB16A200FBE475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED5D59DC1FDB16A200FBE475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -253,6 +257,8 @@
 		EDEF1EDB1FDB47E900D8EFF8 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				ED2B40D11FE6374D00AC80E3 /* BaseViewController.swift */,
+				ED2B40D01FE6374C00AC80E3 /* MenuViewController.swift */,
 				EDEF1EDC1FDB47F300D8EFF8 /* HostVC.swift */,
 			);
 			path = Menu;
@@ -566,8 +572,10 @@
 				ED00E46F1FDB1E4300D44493 /* SinistroViewController.swift in Sources */,
 				ED5D59D81FDB16A200FBE475 /* AppDelegate.swift in Sources */,
 				ED5D59E01FDB16A200FBE475 /* Guardian.xcdatamodeld in Sources */,
+				ED2B40D31FE6374D00AC80E3 /* BaseViewController.swift in Sources */,
 				ED5F2F1F1FDB596C009444F5 /* SinistroTableViewCell.swift in Sources */,
 				ED00E4751FDB201A00D44493 /* MapaViewController.swift in Sources */,
+				ED2B40D21FE6374D00AC80E3 /* MenuViewController.swift in Sources */,
 				ED2311871FDEFC24008A01D0 /* NotificacaoTableViewCell.swift in Sources */,
 				ED00E4731FDB1FB800D44493 /* DashViewController.swift in Sources */,
 				ED00E4711FDB1F1600D44493 /* AlertaViewController.swift in Sources */,
