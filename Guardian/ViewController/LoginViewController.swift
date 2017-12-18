@@ -27,11 +27,52 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         btnLogin.backgroundColor = UIColor(red: 0/255, green: 84/255, blue: 114/255, alpha: 1.0)
         btnLogin.layer.cornerRadius = btnLogin.layer.frame.height / 2
     }
+    private func movekey(_ textField: UITextField) {
+        if(textField == tfSenha) {
+            MoveKeyboard.animateViewMoving(view: view, up: true, moveValue: 200)
+        }else {
+            MoveKeyboard.animateViewMoving(view: view, up: true, moveValue: 100)
+        }
+    }
     
-    private func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        switch UIDevice().type {
+        case .iPhone4:
+            movekey(textField)
+            break
+        case .iPhone5:
+            movekey(textField)
+            break
+        case .iPhone5C:
+            movekey(textField)
+            break
+        case .iPhone5S:
+            movekey(textField)
+            break
+        default:
+            print("\(UIDevice().type)")
+        }
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        if(textField == tfSenha) {
+            MoveKeyboard.animateViewMoving(view: view, up: false, moveValue: 200)
+        }else {
+            MoveKeyboard.animateViewMoving(view: view, up: false, moveValue: 100)
+        }
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if(textField == tfEmail) {
+            tfSenha.becomeFirstResponder()
+        }else {
+            tfSenha.resignFirstResponder()
+        }
         return true
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -66,13 +107,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.stopLoadAnimation()
             
             if _result {
+                
+                //salvando os token
+                let defaults = UserDefaults.standard
+                defaults.set(_tokenOrMessage, forKey: TOKEN)
+                defaults.synchronize()
 
+                //direcionando para tabbar
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let navigationController = storyBoard.instantiateViewController(withIdentifier: "tabBarMain") as! UITabBarController
 
                 self.present(navigationController, animated: true, completion: nil)
 
             }else {
+                //alerta de erro
                 let alertController = UIAlertController(title: "Ops", message: _tokenOrMessage, preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "Voltar", style: .default, handler: nil)
                 alertController.addAction(defaultAction)

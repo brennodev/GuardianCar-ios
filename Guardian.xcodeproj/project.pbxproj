@@ -31,6 +31,9 @@
 		ED5F2F231FDB80F2009444F5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = ED5F2F221FDB80F2009444F5 /* logo.png */; };
 		EDE1ED191FE4377000389DC6 /* DriveONConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE1ED181FE4377000389DC6 /* DriveONConst.swift */; };
 		EDEF1EDD1FDB47F300D8EFF8 /* HostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEF1EDC1FDB47F300D8EFF8 /* HostVC.swift */; };
+		EDF718141FE79C4400651C80 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF718131FE79C4400651C80 /* SplashViewController.swift */; };
+		EDF718161FE79D6F00651C80 /* MoveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF718151FE79D6F00651C80 /* MoveKeyboard.swift */; };
+		EDF718181FE7A76A00651C80 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF718171FE7A76A00651C80 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		ED5F2F221FDB80F2009444F5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		EDE1ED181FE4377000389DC6 /* DriveONConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveONConst.swift; sourceTree = "<group>"; };
 		EDEF1EDC1FDB47F300D8EFF8 /* HostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostVC.swift; sourceTree = "<group>"; };
+		EDF718131FE79C4400651C80 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		EDF718151FE79D6F00651C80 /* MoveKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveKeyboard.swift; sourceTree = "<group>"; };
+		EDF718171FE7A76A00651C80 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		EFD83A73E27602696F04C881 /* Pods-GuardianUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuardianUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuardianUITests/Pods-GuardianUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +154,7 @@
 				EDEF1EDB1FDB47E900D8EFF8 /* Menu */,
 				ED00E4761FDB202100D44493 /* bar */,
 				ED5F2F201FDB779B009444F5 /* LoginViewController.swift */,
+				EDF718131FE79C4400651C80 /* SplashViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -250,6 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				EDE1ED181FE4377000389DC6 /* DriveONConst.swift */,
+				EDF718151FE79D6F00651C80 /* MoveKeyboard.swift */,
+				EDF718171FE7A76A00651C80 /* Model.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -572,14 +581,17 @@
 				ED00E46F1FDB1E4300D44493 /* SinistroViewController.swift in Sources */,
 				ED5D59D81FDB16A200FBE475 /* AppDelegate.swift in Sources */,
 				ED5D59E01FDB16A200FBE475 /* Guardian.xcdatamodeld in Sources */,
+				EDF718161FE79D6F00651C80 /* MoveKeyboard.swift in Sources */,
 				ED2B40D31FE6374D00AC80E3 /* BaseViewController.swift in Sources */,
 				ED5F2F1F1FDB596C009444F5 /* SinistroTableViewCell.swift in Sources */,
 				ED00E4751FDB201A00D44493 /* MapaViewController.swift in Sources */,
 				ED2B40D21FE6374D00AC80E3 /* MenuViewController.swift in Sources */,
+				EDF718141FE79C4400651C80 /* SplashViewController.swift in Sources */,
 				ED2311871FDEFC24008A01D0 /* NotificacaoTableViewCell.swift in Sources */,
 				ED00E4731FDB1FB800D44493 /* DashViewController.swift in Sources */,
 				ED00E4711FDB1F1600D44493 /* AlertaViewController.swift in Sources */,
 				ED5F2F211FDB779B009444F5 /* LoginViewController.swift in Sources */,
+				EDF718181FE7A76A00651C80 /* Model.swift in Sources */,
 				EDE1ED191FE4377000389DC6 /* DriveONConst.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

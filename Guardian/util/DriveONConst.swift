@@ -19,3 +19,10 @@ let DRIVEON_SEGURADO_FORGOT = DRIVEON_SEGURADO + "forgot"
 //sinistro
 let DRIVEON_SINISTRO = DRIVEON_SEGURADO + "sinistro"
 
+
+
+
+
+//USER DEFAULTS
+let TOKEN = "token"
+let USERID = "userID"

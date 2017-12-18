@@ -73,11 +73,10 @@ class MapaViewController: BaseViewController, CLLocationManagerDelegate, MKMapVi
         
         mapView.setRegion(region, animated: false)
         
-         let pin = MKPointAnnotation()
-         pin.coordinate.latitude = userLocation.coordinate.latitude
-         pin.coordinate.longitude = userLocation.coordinate.longitude
-         pin.title = "JXP 0102"
-         mapView.addAnnotation(pin)
+//         let pin = MKPointAnnotation()
+//         pin.coordinate.latitude = userLocation.coordinate.latitude
+//         pin.coordinate.longitude = userLocation.coordinate.longitude
+//         mapView.addAnnotation(pin)
         
     }
 }
