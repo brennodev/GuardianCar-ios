@@ -10,6 +10,8 @@ import UIKit
 
 class DashViewController: BaseViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var lbDateEPlaca: UILabel!
+    
     @IBOutlet weak var vwMap1: UIView!
     @IBOutlet weak var vwMap2: UIView!
     @IBOutlet weak var vwMap3: UIView!
@@ -19,10 +21,17 @@ class DashViewController: BaseViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var vwMap7: UIView!
     
+    let date = Date()
+    let formatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.addSlideMenuButton()
+        
+        formatter.dateFormat = "dd/MM/yyyy"        
+        lbDateEPlaca.text = formatter.string(from: date) + " | JXP 0102" 
+        
         self.vwMap1.backgroundColor = .white
         self.vwMap2.backgroundColor = .white
         self.vwMap3.backgroundColor = .white

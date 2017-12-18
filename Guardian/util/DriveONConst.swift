@@ -19,7 +19,8 @@ let DRIVEON_SEGURADO_FORGOT = DRIVEON_SEGURADO + "forgot"
 //sinistro
 let DRIVEON_SINISTRO = DRIVEON_SEGURADO + "sinistro"
 
-
+//mapa
+let DRIVEON_MAPA = DRIVEON_HOST + "carro/me"
 
 
 

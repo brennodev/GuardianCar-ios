@@ -20,10 +20,19 @@ class SinistroViewController: BaseViewController, UITableViewDataSource, UITable
     
     let cellSpacingHeight: CGFloat = 20
     
+    let date = Date()
+    let formatter = DateFormatter()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        formatter.dateFormat = "dd/MM/yyyy"
+        
+        lbDate.text = formatter.string(from: date)
         
         self.addSlideMenuButton()
+        
         
         self.tableview.delegate = self
         self.tableview.dataSource = self

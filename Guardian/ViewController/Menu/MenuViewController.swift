@@ -14,6 +14,7 @@ protocol SlideMenuDelegate {
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
     /**
     *  Array to display menu options
     */
@@ -39,10 +40,23 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     */
     var delegate : SlideMenuDelegate?
     
+    let gradientLayer = CAGradientLayer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gradientLayer.frame = self.view.bounds
+        
+        let color1 = UIColor.yellow.cgColor as CGColor
+        let color2 = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0).cgColor as CGColor
+        
+        gradientLayer.colors = [color1, color2]
+        
+        // 4
+        //tblMenuOptions.layer.addSublayer(gradientLayer)
+        
         tblMenuOptions.tableFooterView = UIView()
-        // Do any additional setup after loading the view.
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,8 +70,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func updateArrayMenuOptions(){
-        arrayMenuOptions.append(["title":"Home", "icon":"HomeIcon"])
-        arrayMenuOptions.append(["title":"Play", "icon":"PlayIcon"])
+        arrayMenuOptions.append(["title":"João Barbosa", "icon":"HomeIcon"])
+        arrayMenuOptions.append(["title":"Perfil", "icon":"HomeIcon"])
+        arrayMenuOptions.append(["title":"Escolher veículo", "icon":"HomeIcon"])
+        arrayMenuOptions.append(["title":"Configurações", "icon":"HomeIcon"])
+        arrayMenuOptions.append(["title":"Termo de Uso", "icon":"PlayIcon"])
+        arrayMenuOptions.append(["title":"Logout", "icon":"PlayIcon"])
         
         tblMenuOptions.reloadData()
     }

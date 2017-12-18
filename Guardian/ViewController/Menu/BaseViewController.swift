@@ -22,19 +22,18 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         
         let topViewController : UIViewController = self.navigationController!.topViewController!
         
-        print("View Controller is : \(topViewController) \n", terminator: "")
         
         switch(index){
         case 0:
             print("Home\n", terminator: "")
 
-            self.openViewControllerBasedOnIdentifier("Home")
+            //self.openViewControllerBasedOnIdentifier("Home")
             
             break
         case 1:
             print("Play\n", terminator: "")
             
-            self.openViewControllerBasedOnIdentifier("PlayVC")
+            //self.openViewControllerBasedOnIdentifier("PlayVC")
             
             break
         default:
