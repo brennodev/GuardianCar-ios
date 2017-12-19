@@ -32,8 +32,6 @@ class SinistroViewController: BaseViewController, UITableViewDataSource, UITable
         lbDate.text = formatter.string(from: date)
         
         self.addSlideMenuButton()
-        
-        
         self.tableview.delegate = self
         self.tableview.dataSource = self
     }
@@ -54,9 +52,7 @@ class SinistroViewController: BaseViewController, UITableViewDataSource, UITable
         cell.imgInfo.image = #imageLiteral(resourceName: "btnInfo")
         cell.imgTipo.image = imgSinistro[indexPath.row]
         cell.imgForma.image = #imageLiteral(resourceName: "sinitelefone")
-        
 
-        
         return cell //4.
     }
     
