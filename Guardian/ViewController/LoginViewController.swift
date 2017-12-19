@@ -27,11 +27,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         btnLogin.backgroundColor = UIColor(red: 0/255, green: 84/255, blue: 114/255, alpha: 1.0)
         btnLogin.layer.cornerRadius = btnLogin.layer.frame.height / 2
     }
-    private func movekey(_ textField: UITextField) {
+    private func movekey(up: Bool, _ textField: UITextField) {
         if(textField == tfSenha) {
-            MoveKeyboard.animateViewMoving(view: view, up: true, moveValue: 200)
+            MoveKeyboard.animateViewMoving(view: view, up: up, moveValue: 200)
         }else {
-            MoveKeyboard.animateViewMoving(view: view, up: true, moveValue: 100)
+            MoveKeyboard.animateViewMoving(view: view, up: up, moveValue: 100)
         }
     }
     
@@ -39,16 +39,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         switch UIDevice().type {
         case .iPhone4:
-            movekey(textField)
+            movekey(up: true, textField)
             break
         case .iPhone5:
-            movekey(textField)
+            movekey(up: true, textField)
             break
         case .iPhone5C:
-            movekey(textField)
+            movekey(up: true, textField)
             break
         case .iPhone5S:
-            movekey(textField)
+            movekey(up: true, textField)
             break
         default:
             print("\(UIDevice().type)")
@@ -57,10 +57,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        if(textField == tfSenha) {
-            MoveKeyboard.animateViewMoving(view: view, up: false, moveValue: 200)
-        }else {
-            MoveKeyboard.animateViewMoving(view: view, up: false, moveValue: 100)
+        
+        switch UIDevice().type {
+        case .iPhone4:
+            movekey(up: false, textField)
+            break
+        case .iPhone5:
+            movekey(up: false, textField)
+            break
+        case .iPhone5C:
+            movekey(up: false, textField)
+            break
+        case .iPhone5S:
+            movekey(up: false, textField)
+            break
+        default:
+            print("\(UIDevice().type)")
         }
     }
 

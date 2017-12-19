@@ -31,7 +31,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="Ksp-fr-Kzq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="demo@driveonauto.com" borderStyle="roundedRect" placeholder="Endereço de Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ie9-rx-VhL">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Endereço de Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ie9-rx-VhL">
                                 <rect key="frame" x="16" y="303.5" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ejt-Q1-hr4"/>
@@ -130,7 +130,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17/12/2017" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sco-LW-Vw7">
-                                <rect key="frame" x="16" y="94" width="343" height="20"/>
+                                <rect key="frame" x="16" y="74" width="343" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="coM-t0-vkr"/>
                                 </constraints>
@@ -139,7 +139,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecione um contato e solicite assistência" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDB-aj-q9p">
-                                <rect key="frame" x="24" y="148" width="327" height="60"/>
+                                <rect key="frame" x="24" y="128" width="327" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="vlU-GX-JsD"/>
                                 </constraints>
@@ -148,7 +148,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEx-vm-7z9">
-                                <rect key="frame" x="325" y="114" width="34" height="34"/>
+                                <rect key="frame" x="325" y="94" width="34" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="JD9-C2-6Cl"/>
                                     <constraint firstAttribute="height" constant="34" id="hhz-PM-b9m"/>
@@ -159,7 +159,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0aq-EE-M4c">
-                                <rect key="frame" x="16" y="213" width="343" height="405"/>
+                                <rect key="frame" x="16" y="193" width="343" height="425"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -244,7 +244,7 @@
                         <constraints>
                             <constraint firstItem="AdV-yU-54Y" firstAttribute="trailing" secondItem="0aq-EE-M4c" secondAttribute="trailing" constant="16" id="2uL-11-ftC"/>
                             <constraint firstItem="BDB-aj-q9p" firstAttribute="leading" secondItem="AdV-yU-54Y" secondAttribute="leading" constant="24" id="3eW-kD-bd7"/>
-                            <constraint firstItem="sco-LW-Vw7" firstAttribute="top" secondItem="AdV-yU-54Y" secondAttribute="top" constant="30" id="7GU-c7-8rN"/>
+                            <constraint firstItem="sco-LW-Vw7" firstAttribute="top" secondItem="AdV-yU-54Y" secondAttribute="top" constant="10" id="7GU-c7-8rN"/>
                             <constraint firstItem="AdV-yU-54Y" firstAttribute="trailing" secondItem="BDB-aj-q9p" secondAttribute="trailing" constant="24" id="Ab6-f8-F57"/>
                             <constraint firstItem="0aq-EE-M4c" firstAttribute="bottom" secondItem="AdV-yU-54Y" secondAttribute="bottom" id="IrN-Ux-mB4"/>
                             <constraint firstItem="AdV-yU-54Y" firstAttribute="trailing" secondItem="sco-LW-Vw7" secondAttribute="trailing" constant="16" id="PRY-mF-DyX"/>
