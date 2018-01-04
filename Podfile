@@ -8,7 +8,7 @@ target 'Guardian' do
   # Pods for Guardian
   pod 'InteractiveSideMenu'  
   pod 'SwiftyJSON'
-
+  pod 'SQLite.swift', '~> 0.11'
 
 target 'GuardianTests' do
     inherit! :search_paths

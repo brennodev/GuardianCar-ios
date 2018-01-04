@@ -16,17 +16,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tfSenha: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     
+    let defaults = UserDefaults.standard
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tfEmail.delegate = self
         tfSenha.delegate = self
-        
+            
         btnLogin.setTitleColor(.white, for: .normal)
         btnLogin.backgroundColor = UIColor(red: 0/255, green: 84/255, blue: 114/255, alpha: 1.0)
         btnLogin.layer.cornerRadius = btnLogin.layer.frame.height / 2
+        
     }
+    
     private func movekey(up: Bool, _ textField: UITextField) {
         if(textField == tfSenha) {
             MoveKeyboard.animateViewMoving(view: view, up: up, moveValue: 200)
@@ -76,6 +79,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if(textField == tfEmail) {
             tfSenha.becomeFirstResponder()
@@ -121,16 +125,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if _result {
                 
                 //salvando os token
-                let defaults = UserDefaults.standard
-                defaults.set(_tokenOrMessage, forKey: TOKEN)
-                defaults.synchronize()
+                self.defaults.set(_tokenOrMessage, forKey: TOKEN)
+                self.defaults.synchronize()
 
-                //direcionando para tabbar
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let navigationController = storyBoard.instantiateViewController(withIdentifier: "tabBarMain") as! UITabBarController
+                self.loadPerfil {(error, _user, msg) in
+                    
+                    if (_user != nil) {
+                        DatabaseManagement.shared.insertTableUser(user: _user!)
+                        
+                        //direcionando para tabbar
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let navigationController = storyBoard.instantiateViewController(withIdentifier: "tabBarMain") as! MyTabBarController
+                        self.present(navigationController, animated: true, completion: nil)
 
-                self.present(navigationController, animated: true, completion: nil)
-
+                    }else {
+                        print("error ao ler perfil")
+                    }
+                }
             }else {
                 //alerta de erro
                 let alertController = UIAlertController(title: "Ops", message: _tokenOrMessage, preferredStyle: .alert)
@@ -165,6 +176,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
             }
+        }
+    }
+    
+    func loadPerfil(completionHandler: @escaping (_ result: Bool, _ user: User? , _ message: String? ) -> ()) {
+        print("load perfil")
+        let deToken = defaults.string(forKey: TOKEN)
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "JWT " + deToken!
+        ]
+        
+        Alamofire.request(DRIVEON_SEGURADO_PERFIL, method: .post, headers: headers)
+            .responseJSON { responseData in
+                
+                print("alamofire")
+                if ((responseData.result.value != nil)) {
+                    let post = JSON(responseData.result.value!)
+                    let userModel = User(json: post)
+                    completionHandler(false, userModel, "")
+                }
         }
     }
     

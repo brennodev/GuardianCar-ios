@@ -12,7 +12,7 @@ import CoreLocation
 import Alamofire
 import SwiftyJSON
 
-class MapaViewController: BaseViewController  { //}, CLLocationManagerDelegate, MKMapViewDelegate {
+class MapaViewController: BaseViewController, MKMapViewDelegate  { //}, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var vwMap1: UIView!
     @IBOutlet weak var vwMap2: UIView!
@@ -32,11 +32,15 @@ class MapaViewController: BaseViewController  { //}, CLLocationManagerDelegate, 
     let date = Date()
     let formatter = DateFormatter()
 
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        self.loadDada(completionHandler: <#T##(Bool, ModelMap) -> ()#>)
-//    }
+    var point1 = MKPointAnnotation()
+    var point2 = MKPointAnnotation()
+    var point3 = MKPointAnnotation()
+    var myRoute : MKRoute?
+    
     override func viewDidLoad() {
+        
+        self.mapView.delegate = self
+        
         
         loadDada { (error, _model) in
             
@@ -50,23 +54,67 @@ class MapaViewController: BaseViewController  { //}, CLLocationManagerDelegate, 
             self.lbT3Carro.text = _model.fabricante + " " + _model.modelo
             self.lbT3Placa.text = _model.placa
             
-            let location = CLLocationCoordinate2D(latitude: Double(_model.latitude)!, longitude: Double(_model.longitude)!)
-            let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
-            self.mapView.setRegion(region, animated: true)
-            let dropPin = MKPointAnnotation()
-            dropPin.coordinate = location
-        
-            dropPin.title = _model.placa
-            dropPin.subtitle = _model.modelo
+            self.point1.coordinate = CLLocationCoordinate2DMake(Double(_model.latitude)!, Double(_model.longitude)!)
+            self.point1.title = "Final"
+            self.point1.subtitle = "Taiwan"
+            self.mapView.addAnnotation(self.point1)
+            
+            self.point2.coordinate = CLLocationCoordinate2DMake(-3.1269919, -60.0155599)
+            self.point2.title = "Inicial"
+            self.point2.subtitle = "Taiwan"
+            self.mapView.addAnnotation(self.point2)
+            self.mapView.centerCoordinate = self.point2.coordinate
+            
+            self.point3.coordinate = CLLocationCoordinate2DMake(-3.0299567,-59.9812923)
+            self.point3.title = "Inicial"
+            self.point3.subtitle = "Taiwan"
+            self.mapView.addAnnotation(self.point3)
+            self.mapView.centerCoordinate = self.point2.coordinate
+            
+            //Span of the map
+            self.mapView.setRegion(MKCoordinateRegionMake(self.point2.coordinate, MKCoordinateSpanMake(0.1,0.1)), animated: true)
+            
+            let directionsRequest = MKDirectionsRequest()
+            
+            let mark1 = MKPlacemark(coordinate: CLLocationCoordinate2DMake(self.point1.coordinate.latitude, self.point1.coordinate.longitude), addressDictionary: nil)
+            let mark2 = MKPlacemark(coordinate: CLLocationCoordinate2DMake(self.point2.coordinate.latitude, self.point2.coordinate.longitude), addressDictionary: nil)
+            
+            let mark3 = MKPlacemark(coordinate: CLLocationCoordinate2DMake(self.point3.coordinate.latitude, self.point3.coordinate.longitude), addressDictionary: nil)
+            
+            directionsRequest.source = MKMapItem(placemark: mark1)
+            directionsRequest.destination = MKMapItem(placemark: mark2)
+            
 
-            self.mapView.addAnnotation(dropPin)
+            directionsRequest.transportType = MKDirectionsTransportType.automobile
+            
+            let directions = MKDirections(request: directionsRequest)
+            
+            directions.calculate(completionHandler: { (response, error) in
+                if error == nil {
+                    self.myRoute = response?.routes[0]
+                    self.mapView.add((self.myRoute?.polyline)!)
+                }
+            })
+            
+//            let region = MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+//            self.mapView.setRegion(region, animated: true)
+//            let dropPin = MKPointAnnotation()
+//            dropPin.coordinate = location
+//
+//            dropPin.title = _model.placa
+//            dropPin.subtitle = _model.modelo
+//
+//            self.mapView.addAnnotation(dropPin)
         }
+        
+ 
+        
         super.viewDidLoad()
         self.addSlideMenuButton()
     
         formatter.dateFormat = "dd/MM/yyyy"
 
-        self.mapView.showsUserLocation = true
+//        self.mapView.showsUserLocation = true
         
         self.vwMap1.layer.cornerRadius = 10
         self.vwMap2.layer.cornerRadius = 10
@@ -83,9 +131,13 @@ class MapaViewController: BaseViewController  { //}, CLLocationManagerDelegate, 
         self.vwMap3.layer.shadowColor = UIColor.black.cgColor
         self.vwMap3.layer.shadowOpacity = 0.8
         self.vwMap3.layer.shadowOffset = CGSize.zero
-        
-       
-
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let myLineRenderer = MKPolylineRenderer(polyline: (myRoute?.polyline)!)
+        myLineRenderer.strokeColor = UIColor.red
+        myLineRenderer.lineWidth = 3
+        return myLineRenderer
     }
     
     func loadDada(completionHandler: @escaping (_ result: Bool, _ model: ModelMap) -> ()) {

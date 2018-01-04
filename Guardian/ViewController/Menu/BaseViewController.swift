@@ -20,7 +20,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     
     func slideMenuItemSelectedAtIndex(_ index: Int32) {
         
-        let topViewController : UIViewController = self.navigationController!.topViewController!
+        let _ : UIViewController = self.navigationController!.topViewController!
         
         
         switch(index){

@@ -18,25 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="DKf-Ok-Fq2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0hV-2V-m0q">
-                                <rect key="frame" x="40" y="271" width="294" height="124"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="294" id="NI6-e0-Foa"/>
-                                    <constraint firstAttribute="height" constant="124" id="RfZ-uD-77D"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dash" translatesAutoresizingMaskIntoConstraints="NO" id="nuq-ca-Vdi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0hV-2V-m0q" firstAttribute="centerY" secondItem="DKf-Ok-Fq2" secondAttribute="centerY" id="Qmd-AK-sCZ"/>
-                            <constraint firstItem="DKf-Ok-Fq2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="U43-ap-GrD"/>
-                            <constraint firstItem="0hV-2V-m0q" firstAttribute="centerX" secondItem="DKf-Ok-Fq2" secondAttribute="centerX" id="mdw-Su-N6m"/>
-                            <constraint firstItem="DKf-Ok-Fq2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oW2-hI-p9u"/>
-                            <constraint firstItem="DKf-Ok-Fq2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uHc-Bs-iA1"/>
-                            <constraint firstItem="DKf-Ok-Fq2" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="vtk-vo-uyi"/>
+                            <constraint firstItem="nuq-ca-Vdi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BfF-tX-vgO"/>
+                            <constraint firstItem="nuq-ca-Vdi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aUJ-iD-rRW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nuq-ca-Vdi" secondAttribute="bottom" id="fF5-Dk-Z23"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nuq-ca-Vdi" secondAttribute="trailing" id="gMB-Z5-K5B"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -47,7 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Login" width="360" height="640"/>
-        <image name="logo.png" width="541" height="211"/>
+        <image name="dash" width="360" height="640"/>
     </resources>
 </document>

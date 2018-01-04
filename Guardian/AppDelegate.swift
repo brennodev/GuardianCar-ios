@@ -16,7 +16,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+   
+        
+        //verifica se esta logado
+        let defaults = UserDefaults.standard
+        let deToken = defaults.string(forKey: TOKEN)
+        
+        print(deToken as Any)
+        if (deToken != nil) {
+            
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let navigationController = storyBoard.instantiateViewController(withIdentifier: "tabBarMain") as! UITabBarController
+            self.window?.rootViewController = navigationController
+            self.window?.makeKeyAndVisible()
+
+        }else {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+        }
+        
+        
         return true
     }
 

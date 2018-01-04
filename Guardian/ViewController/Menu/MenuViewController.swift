@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 protocol SlideMenuDelegate {
     func slideMenuItemSelectedAtIndex(_ index : Int32)
@@ -41,36 +43,34 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var delegate : SlideMenuDelegate?
     
     let gradientLayer = CAGradientLayer()
+    
+    
+    private var fullname: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadData()
         gradientLayer.frame = self.view.bounds
-        
-        let color1 = UIColor.yellow.cgColor as CGColor
-        let color2 = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0).cgColor as CGColor
-        
-        gradientLayer.colors = [color1, color2]
-        
-        // 4
-        //tblMenuOptions.layer.addSublayer(gradientLayer)
-        
         tblMenuOptions.tableFooterView = UIView()
 
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    private func loadData() {
+        print("MenuViiew:LoadData")
+        let user = DatabaseManagement.shared.listTableUser()
+        
+        self.fullname = user.fullname
+        
+        print(self.fullname)
+        
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateArrayMenuOptions()
     }
     
     func updateArrayMenuOptions(){
-        arrayMenuOptions.append(["title":"João Barbosa", "icon":"HomeIcon"])
+        arrayMenuOptions.append(["title": self.fullname, "icon":"HomeIcon"])
         arrayMenuOptions.append(["title":"Perfil", "icon":"HomeIcon"])
         arrayMenuOptions.append(["title":"Escolher veículo", "icon":"HomeIcon"])
         arrayMenuOptions.append(["title":"Configurações", "icon":"HomeIcon"])

@@ -373,7 +373,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="0.42787000870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="quZ-th-dJQ" secondAttribute="trailing" constant="8" id="3je-ZB-HCm"/>
                                                         <constraint firstItem="iaP-vR-3uf" firstAttribute="top" secondItem="wJ2-JT-gxf" secondAttribute="top" constant="10" id="euC-AA-ior"/>
@@ -552,7 +551,7 @@
                                                     <constraint firstAttribute="width" constant="25" id="LB5-ek-kPi"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVl-cY-ZO3">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVl-cY-ZO3">
                                                 <rect key="frame" x="41" y="35" width="53" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="ykw-Rn-8iO"/>
@@ -633,7 +632,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LpV-5P-WH1">
                                         <rect key="frame" x="132" y="15" width="100" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgF-a1-Tuz">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgF-a1-Tuz">
                                                 <rect key="frame" x="41" y="35" width="53" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="18U-Vd-VU6"/>
@@ -656,7 +655,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="9aD-uy-al4"/>
                                                 </constraints>
-                                                <color key="progressTintColor" red="0.1647058824" green="0.64705882349999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="progressTintColor" red="0.85882352939999995" green="0.56078431370000004" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </progressView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="freio" translatesAutoresizingMaskIntoConstraints="NO" id="1Yp-xx-LMR">
                                                 <rect key="frame" x="12" y="31" width="25" height="25"/>
@@ -955,15 +954,20 @@
             </objects>
             <point key="canvasLocation" x="2605.5999999999999" y="252.32383808095955"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="l6c-nR-Vtf">
             <objects>
-                <tabBarController storyboardIdentifier="tabBarMain" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YMx-p9-gyd" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarMain" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YMx-p9-gyd" customClass="MyTabBarController" customModule="Guardian" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z9l-p1-sGU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="f1B-fi-Tvc" kind="relationship" relationship="viewControllers" id="pK8-Gn-e1I"/>
                         <segue destination="NLt-KR-YdI" kind="relationship" relationship="viewControllers" id="udG-Eh-x6q"/>
@@ -1606,7 +1610,7 @@
         <scene sceneID="YJg-a5-4TV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NLt-KR-YdI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="barNotificacao" selectedImage="barNotificacaoAzul" id="ySh-SU-1iU"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="" image="barNotificacao" selectedImage="barNotificacaoAzul" id="ySh-SU-1iU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wM2-w6-pHR">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1625,7 +1629,7 @@
         <scene sceneID="H56-p5-8dt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="joO-zr-M89" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="barDash" selectedImage="barDashAzul" id="v0Q-9v-QqE"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="barDash" selectedImage="barDashAzul" id="v0Q-9v-QqE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LQe-Be-ay1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1644,7 +1648,7 @@
         <scene sceneID="AbI-mw-a0U">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WTc-BS-Vy6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="barMapa" selectedImage="barMapaAzul" id="Qbe-cN-xQ5"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="" image="barMapa" selectedImage="barMapaAzul" id="Qbe-cN-xQ5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pd7-9u-YYP">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1663,7 +1667,7 @@
         <scene sceneID="o0M-w4-uOO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1hl-Ma-WWw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="barCarro" id="tCC-mS-ENX"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="" image="barCarro" id="tCC-mS-ENX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FOx-Om-APy">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
